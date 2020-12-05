@@ -1,4 +1,4 @@
-# my-app
+# vuetify-admin
 
 ## Project setup
 ```
