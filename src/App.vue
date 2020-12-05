@@ -3,6 +3,7 @@
     <v-navigation-drawer
       v-model="drawer"
       app
+      :width="navWidth"
     >
       <v-sheet
         color="grey lighten-4"
@@ -16,9 +17,7 @@
 
         <div>john@vuetifyjs.com</div>
       </v-sheet>
-
       <v-divider></v-divider>
-
       <v-list>
         <v-list-item
           v-for="[icon, text] in links"
@@ -37,59 +36,22 @@
     </v-navigation-drawer>
     <v-app-bar app>
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
-
       <v-toolbar-title>Application</v-toolbar-title>
     </v-app-bar>
     <v-main>
-      <v-container
-        class="py-8 px-6"
-        fluid
-      >
-        <v-row>
-          <v-col
-            v-for="card in cards"
-            :key="card"
-            cols="12"
-          >
-            <v-card>
-              <v-subheader>{{ card }}</v-subheader>
-
-              <v-list two-line>
-                <template v-for="n in 6">
-                  <v-list-item
-
-                    :key="n"
-                  >
-                    <v-list-item-avatar color="grey darken-1">
-                    </v-list-item-avatar>
-
-                    <v-list-item-content>
-                      <v-list-item-title>Message {{ n }}</v-list-item-title>
-
-                      <v-list-item-subtitle>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil repellendus distinctio similique
-                      </v-list-item-subtitle>
-                    </v-list-item-content>
-                  </v-list-item>
-
-                  <v-divider
-                    v-if="n !== 6"
-                    :key="`divider-${n}`"
-                    inset
-                  ></v-divider>
-                </template>
-              </v-list>
-            </v-card>
-          </v-col>
-        </v-row>
-      </v-container>
+        <WelcomeIndex msg="Welcome to Your Vue.js App" />
     </v-main>
   </v-app>
 </template>
 <script>
+  import WelcomeIndex  from '@/components/welcome/Index'
+
   export default {
+    components:{
+        WelcomeIndex
+    },
     data: () => ({
-      cards: ['Today', 'Yesterday'],
+      navWidth: 200,  //<!-- navigation 的宽度 -->
       drawer: null,
       links: [
         ['mdi-inbox-arrow-down', 'Inbox'],
