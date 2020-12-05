@@ -1,4 +1,5 @@
 <template>
+    
     <v-navigation-drawer
       v-model="drawer"
       app
@@ -28,7 +29,7 @@
           </v-list-item-icon>
 
           <v-list-item-content>
-            <v-list-item-title>{{ text }}</v-list-item-title>
+              <router-link :to="{path:'/tables'}"> {{ text }} </router-link>
           </v-list-item-content>
         </v-list-item>
       </v-list>
