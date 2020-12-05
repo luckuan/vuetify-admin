@@ -39,16 +39,20 @@
       <v-toolbar-title>Application</v-toolbar-title>
     </v-app-bar>
     <v-main>
+      <v-container class="py-8 px-6"  fluid>
+        <WelcomeTable />
         <WelcomeIndex msg="Welcome to Your Vue.js App" />
+      </v-container>
     </v-main>
   </v-app>
 </template>
 <script>
   import WelcomeIndex  from '@/components/welcome/Index'
+  import WelcomeTable  from '@/components/welcome/Table'
 
   export default {
     components:{
-        WelcomeIndex
+        WelcomeIndex,WelcomeTable
     },
     data: () => ({
       navWidth: 200,  //<!-- navigation 的宽度 -->
