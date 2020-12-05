@@ -5,13 +5,25 @@
             Nutrition
             <v-spacer></v-spacer>
             <v-text-field
-            v-model="search"
-            append-icon="mdi-magnify"
-            label="Search"
-            single-line
-            hide-details
-            ></v-text-field>
+                v-model="search"
+                append-icon="mdi-magnify"
+                label="Search"
+                single-line
+                hide-details
+            />
         </v-card-title>
+
+
+        <v-card-title>
+            <v-btn 
+                depressed
+                color="primary"
+                @click="showAlert('kuan')"
+            >
+                Normal
+            </v-btn>
+        </v-card-title>
+
         <v-data-table
         :headers="headers"
         :items="desserts"
@@ -306,6 +318,17 @@
         this.editedItem = Object.assign({}, item)
         this.dialog = true
       },
+
+      editItems (items) {
+        this.editedIndex = this.desserts.indexOf(items)
+        this.editedItem = Object.assign({}, items)
+        this.dialog = true
+      },
+
+      showAlert(vv){
+          alert(vv)
+      },
+
 
       deleteItem (item) {
         this.editedIndex = this.desserts.indexOf(item)
