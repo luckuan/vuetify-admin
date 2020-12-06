@@ -20,7 +20,7 @@
       <v-divider></v-divider>
       <v-list>
         <v-list-item
-          v-for="[icon, text] in links"
+          v-for="[icon, text, targetPath] in links"
           :key="icon"
           link
         >
@@ -29,7 +29,7 @@
           </v-list-item-icon>
 
           <v-list-item-content>
-              <router-link :to="{path:'/tables'}"> {{ text }} </router-link>
+              <router-link :to="{path:targetPath}"> {{ text }} </router-link>
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -45,10 +45,10 @@ export default {
     data: () => ({
       navWidth: 200,  //<!-- navigation 的宽度 -->
       links: [
-        ['mdi-inbox-arrow-down', 'Inbox'],
-        ['mdi-send', 'Send'],
-        ['mdi-delete', 'Trash'],
-        ['mdi-alert-octagon', 'Spam'],
+        ['mdi-inbox-arrow-down', 'Inbox','/tables'],
+        ['mdi-send', 'Send','/home'],
+        ['mdi-delete', 'Trash','/'],
+        ['mdi-alert-octagon', 'Spam','/tables'],
       ],
     }),
   methods: {
