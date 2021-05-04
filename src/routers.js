@@ -8,27 +8,28 @@ import WelcomeIndex from '@/views/welcome/Index.vue'
 
 Vue.use(VueRouter)
 
-const routes = [
-  { path: '/', redirect: '/home' },
+const routes = [{
+    path: '/',
+    redirect: '/home'
+  },
   {
     path: '/home',
     name: '/home',
     component: Home,
-　　 children: [ 
-{ 
-　path: '/', 
-   component: WelcomeIndex 
-  　　  },
-{ 
-  　path: '/tables', 
-     component: WelcomeTable 
-    　　}
-  　　]
+    children: [{
+        path: '/',
+        component: WelcomeIndex
+      },
+      {
+        path: '/tables',
+        component: WelcomeTable
+      }
+    ]
   },
   {
     path: '/login',
     name: 'Login',
-    component: () => import(/* webpackChunkName: "about" */ '@/views/Login.vue')
+    component: () => import( /* webpackChunkName: "about" */ '@/views/Login.vue')
   }
 ]
 
