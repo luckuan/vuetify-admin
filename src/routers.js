@@ -15,13 +15,13 @@ const routes = [
     name: '/home',
     component: Home,
 　　 children: [ 
-  　　　{ 
-  　　　　path: '/', 
-    　　　 component: WelcomeIndex 
+{ 
+　path: '/', 
+   component: WelcomeIndex 
   　　  },
-  　　　{ 
-    　　　　path: '/tables', 
-      　　　 component: WelcomeTable 
+{ 
+  　path: '/tables', 
+     component: WelcomeTable 
     　　}
   　　]
   },
