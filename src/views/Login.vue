@@ -21,13 +21,8 @@
                 <v-form>
                   <v-text-field label="Login" name="login" prepend-icon="mdi-account" type="text"></v-text-field>
 
-                  <v-text-field
-                    id="password"
-                    label="Password"
-                    name="password"
-                    prepend-icon="mdi-lock"
-                    type="password"
-                  ></v-text-field>
+                  <v-text-field id="password" label="Password" name="password" prepend-icon="mdi-lock" type="password">
+                  </v-text-field>
                 </v-form>
               </v-card-text>
               <v-card-actions>
@@ -43,9 +38,9 @@
 </template>
 
 <script>
-export default {
-  props: {
-    source: String,
-  },
-};
+  export default {
+    props: {
+      source: String,
+    },
+  };
 </script>

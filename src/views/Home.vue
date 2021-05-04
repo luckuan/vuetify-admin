@@ -14,7 +14,7 @@
 <script>
     import Menu from '@/components/layouts/Menu'
     export default {
-        components:{
+        components: {
             Menu
         },
         data: () => ({
